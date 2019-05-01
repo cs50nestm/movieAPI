@@ -2,7 +2,7 @@ let submitButton = document.querySelector('#submit');
 let movieSelected = document.querySelector('#movieName');
 let addResult = document.querySelector('#result');
 
-submitButton.addEventListener('click', e => {
+submitButton.onclick = function() {
     // clear the result div
     addResult.innerHTML = "";
 
@@ -17,14 +17,14 @@ submitButton.addEventListener('click', e => {
         let base_url = "https://api.themoviedb.org/3/search/movie?";
         let api_key = "api_key=8cd641fe58ace9a3561002f6a4a0a852";
 
-        // add movie to query string
+        // TODO add movie to query string
         let query = "&query=" + (add movie variable);
 
         let url = base_url + api_key + query;
 
         getPosters(url);
     }
-})
+}
 
 // async function
 async function getPosters(url) {
